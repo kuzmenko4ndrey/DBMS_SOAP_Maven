@@ -160,19 +160,19 @@ public class DB {
     public static DB load(String name) throws FileNotFoundException {
         System.out.println("load started");
         String path = ServicePublisher.getPath();
-        if (path.charAt(path.length() - 1) != '\\' || path.charAt(path.length() - 1) != '/') {
-            path += '\\';
-        }
-        path += name + '\\';
+//        if (path.charAt(path.length() - 1) != '\\' || path.charAt(path.length() - 1) != '/') {
+//            path += '\\';
+//        }
+        path += name + '/';
         File folder = new File(path);
         System.out.println(path);
         if (!folder.isDirectory()) {
             System.out.println("FileNotFoundException");
             throw new FileNotFoundException();
         }
-        if (path.charAt(path.length() - 1) != '\\' || path.charAt(path.length() - 1) != '/') {
-            path += '\\';
-        }
+//        if (path.charAt(path.length() - 1) != '\\' || path.charAt(path.length() - 1) != '/') {
+//            path += '\\';
+//        }
         DB db = new DB(folder.getName());
         File f = new File(path + "tables");
         Scanner tbls = new Scanner(f);
