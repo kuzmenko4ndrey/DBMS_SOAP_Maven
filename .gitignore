@@ -1,0 +1,30 @@
+*.class
+*.form
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+/DBMS/nbproject/private/
+nbproject/private/
+build/
+nbproject/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+/DBMS/build/
+/DBMS/nbbuild/
+/DBMS/dist/
+/DBMS/nbdist/
+/DBMS/.nb-gradle/
+build.xml
+manifest.mf
+/DBMS/src/RMI_IIOP/orb.db/
+/src/RMI_IIOP/orb.db/
