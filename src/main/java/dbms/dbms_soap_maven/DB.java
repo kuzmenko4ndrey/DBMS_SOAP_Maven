@@ -165,6 +165,7 @@ public class DB {
         }
         path += name + '\\';
         File folder = new File(path);
+        System.out.println(path);
         if (!folder.isDirectory()) {
             System.out.println("FileNotFoundException");
             throw new FileNotFoundException();
