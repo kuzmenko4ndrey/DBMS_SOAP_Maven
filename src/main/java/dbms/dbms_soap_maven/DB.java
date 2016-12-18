@@ -105,6 +105,7 @@ public class DB {
     }
 
     public void save() throws FileNotFoundException, IOException {
+        System.out.println("saving started");
         String path = ServicePublisher.getPath();
         if (path.charAt(path.length() - 1) != '\\' || path.charAt(path.length() - 1) != '/') {
             path += '\\';
@@ -112,8 +113,9 @@ public class DB {
         path += name + '\\';
         File f;
         f = new File(path + "tables");
-        f.getParentFile().mkdir();
+        f.getParentFile().mkdirs();
         f.createNewFile();
+        System.out.println("dirs and files created");
         PrintWriter tf = null;
         try {
             tf = new PrintWriter(path + "tables", "UTF-8");
@@ -152,9 +154,11 @@ public class DB {
             }
             tt.close();
         }
+        System.out.println("saving finished");
     }
 
     public static DB load(String name) throws FileNotFoundException {
+        System.out.println("load started");
         String path = ServicePublisher.getPath();
         if (path.charAt(path.length() - 1) != '\\' || path.charAt(path.length() - 1) != '/') {
             path += '\\';
@@ -162,6 +166,7 @@ public class DB {
         path += name + '\\';
         File folder = new File(path);
         if (!folder.isDirectory()) {
+            System.out.println("FileNotFoundException");
             throw new FileNotFoundException();
         }
         if (path.charAt(path.length() - 1) != '\\' || path.charAt(path.length() - 1) != '/') {
@@ -193,6 +198,7 @@ public class DB {
                 db.addRow(t, als);
             }
         }
+        System.out.println("load finished");
         return db;
     }
 
