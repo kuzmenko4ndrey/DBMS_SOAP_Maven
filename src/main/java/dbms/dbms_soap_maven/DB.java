@@ -107,10 +107,11 @@ public class DB {
     public void save() throws FileNotFoundException, IOException {
         System.out.println("saving started");
         String path = ServicePublisher.getPath();
-        if (path.charAt(path.length() - 1) != '\\' || path.charAt(path.length() - 1) != '/') {
-            path += '\\';
-        }
-        path += name + '\\';
+//        if (path.charAt(path.length() - 1) != '\\' || path.charAt(path.length() - 1) != '/') {
+//            path += '\\';
+//        }
+        path += name + '/';
+        System.out.println(path);
         File f;
         f = new File(path + "tables");
         f.getParentFile().mkdirs();
